@@ -1,4 +1,5 @@
 import io from 'socket.io-client';
+import {sendPendingFriendInvitation} from '../store/actions/friendsActions';
 let socket =null;
 export const connectWithSocket=(userDetails)=>
 {
@@ -15,5 +16,10 @@ export const connectWithSocket=(userDetails)=>
         console.log('successfully connected with socket.io server');
         console.log(socket.id);
 
-    })
+    });
+    socket.on('friends-invitation',(data)=>{
+     const {pendingInvitations}=data
+        // eslint-disable-next-line no-undef
+        store.dispatch(sendPendingFriendInvitation(pendingInvitations))
+    });
 }

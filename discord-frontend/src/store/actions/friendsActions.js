@@ -1,5 +1,6 @@
 import { openAlertMessage } from "./alertActions";
 import * as api from '../../api';
+import { Pending } from "@mui/icons-material";
  export const friendsAction={
     SET_FRIENDS:'FRIENDS.SET_FRIENDS',
     SET_PENDING_FRIENDS_INVITATIONS:'FRIENDS.SET_PENDING_FRIENDS_INVITATIONS',
@@ -13,6 +14,11 @@ dispatch(sendFriendInvitation(data,closeDialogHandler)),
 };
  };
 
+ export const sendPendingFriendInvitation=(PendingFriendInvitation)=>{
+    return {
+        type:friendsAction.SET_PENDING_FRIENDS_INVITATIONS,
+    }
+ }
  const sendFriendInvitation=(data,closeDialogHandler)=>
  {
     return  async(dispatch)=>{
