@@ -12,7 +12,7 @@ const registerSocketServer =(server) =>
         cors:{
             origin:"*",
             methods:["GET", "POST"],
-
+           credential:true,
         },
     });
 

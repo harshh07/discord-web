@@ -8,7 +8,7 @@ const authRoutes = require("./routes/authRoutes");
 const friendInvitationRoutes= require('./routes/friendInvitationRoutes')
 
 const PORT = process.env.PORT || process.env.API_PORT;
-
+mongoose.set("strictQuery", false);
 const app = express();
 app.use(express.json());
 app.use(cors());
