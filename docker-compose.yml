@@ -1,0 +1,18 @@
+﻿services:
+  discord-frontend:
+    build:
+      context: discord-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"   
+    depends_on:
+      - discord-backend
+  discord-backend:
+    build:
+      context: discord-clone-backend
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5002"   
+
+volumes:
+   discord-vol:
