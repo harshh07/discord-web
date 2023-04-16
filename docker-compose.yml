@@ -1,5 +1,6 @@
-﻿services:
+services:
   discord-frontend:
+    container_name: discord-frontend
     build:
       context: discord-frontend
       dockerfile: Dockerfile
@@ -8,6 +9,7 @@
     depends_on:
       - discord-backend
   discord-backend:
+    container_name: discord-backend
     build:
       context: discord-clone-backend
       dockerfile: Dockerfile
